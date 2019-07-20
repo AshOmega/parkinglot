@@ -19,7 +19,7 @@ public class Park implements ProcessFactory {
     }
 
     /**
-     * Over ride execure command
+     * Override execute command
      * @param command
      */
 
@@ -30,7 +30,7 @@ public class Park implements ProcessFactory {
         String regnNum = commandsString[1];
         String color = commandsString[2];
 
-        initiateParking(regnNum, color);
+        initiateParkingTask(regnNum, color);
     }
 
 
@@ -40,8 +40,9 @@ public class Park implements ProcessFactory {
      * @param color
      */
 
-    private void initiateParking(String regnNum, String color) {
+    private void initiateParkingTask(String regnNum, String color) {
 
+        logger.log(Level.INFO, "Entering initiateParkingTask(String regnNum, String color)");
         Car car = new Car(regnNum, color);
         Integer slotNumber = computeAndAllocateFreeSlotForCar(car);
 
@@ -49,6 +50,8 @@ public class Park implements ProcessFactory {
             System.out.println("Allocated slot number: " + slotNumber);
         else
             System.out.println("Sorry, parking lot is full");
+
+        logger.log(Level.INFO, "Exiting initiateParkingTask(String regnNum, String color)");
     }
 
 
@@ -59,6 +62,7 @@ public class Park implements ProcessFactory {
 
     private Integer computeAndAllocateFreeSlotForCar(Car car) {
 
+        logger.log(Level.INFO, "Entering computeAndAllocateFreeSlotForCar(Car car)");
         List<ParkingSlot> parkingSlotList = CreateParkingLot.getInstance().getParkingSlotList();
         for(Integer counter = 0; counter < parkingSlotList.size(); counter++) {
             ParkingSlot parkingSlot = parkingSlotList.get(counter);
@@ -66,9 +70,11 @@ public class Park implements ProcessFactory {
             if(parkingSlot.getCar() == null){
                 parkingSlot.setCar(car);
                 parkingSlot.setEntryTime(LocalDateTime.now().toInstant(ZoneOffset.UTC).toEpochMilli());
+                logger.log(Level.INFO, "Exiting computeAndAllocateFreeSlotForCar(Car car)");
                 return Integer.valueOf(parkingSlot.getId());
             }
         }
+        logger.log(Level.INFO, "Exiting computeAndAllocateFreeSlotForCar(Car car)");
         return Integer.valueOf(-1);
     }
 }

@@ -5,8 +5,6 @@ public class ParkingSlot {
     private Integer id;
     private Long entryTime;
     private Long exitTime;
-
-
     private Car car;
 
     public ParkingSlot(Long entryTime, Long exitTime, Integer id) {
