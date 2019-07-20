@@ -1,15 +1,14 @@
 package com.design.entity;
 
-public class ParkingLot {
+public class ParkingSlot {
 
     private Long entryTime;
     private Long exitTime;
     private Car car;
 
-    public ParkingLot(Long entryTime, Long exitTime, Car car) {
+    public ParkingSlot(Long entryTime, Long exitTime) {
         this.entryTime = entryTime;
         this.exitTime = exitTime;
-        this.car = car;
     }
 
     public Long getEntryTime() {

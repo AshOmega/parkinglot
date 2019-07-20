@@ -10,7 +10,7 @@ public class SlotNumColor implements ProcessFactory {
     final static Logger logger = Logger.getLogger(ParkingLotConstants.APP_NAME);
 
     public SlotNumColor() {
-        //logger.setLevel(Level.SEVERE);
+        logger.setLevel(Level.SEVERE);
     }
 
     /**

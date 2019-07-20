@@ -11,7 +11,7 @@ public class Leave implements ProcessFactory {
 
 
     public Leave(){
-        //logger.setLevel(Level.SEVERE);
+        logger.setLevel(Level.SEVERE);
     }
 
     /**

@@ -10,7 +10,7 @@ public class Park implements ProcessFactory {
     final static Logger logger = Logger.getLogger(ParkingLotConstants.APP_NAME);
 
     public Park() {
-        //logger.setLevel(Level.SEVERE);
+        logger.setLevel(Level.SEVERE);
     }
 
     /**

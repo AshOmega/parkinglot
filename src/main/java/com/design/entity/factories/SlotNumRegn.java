@@ -10,7 +10,7 @@ public class SlotNumRegn implements ProcessFactory {
     final static Logger logger = Logger.getLogger(ParkingLotConstants.APP_NAME);
 
     public SlotNumRegn() {
-       // logger.setLevel(Level.SEVERE);
+        logger.setLevel(Level.SEVERE);
     }
 
     /**
