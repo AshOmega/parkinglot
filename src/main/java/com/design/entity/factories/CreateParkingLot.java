@@ -11,16 +11,22 @@ import java.util.logging.Logger;
 
 public class CreateParkingLot implements ProcessFactory {
 
+    private static CreateParkingLot createParkingLot = new CreateParkingLot();
     final static Logger logger = Logger.getLogger(ParkingLotConstants.APP_NAME);
+
+
     private AtomicInteger parkingLotSize = new AtomicInteger();
-
-
 
     List<ParkingSlot> parkingSlotList = new ArrayList<>();
 
-    public CreateParkingLot(){
+    private CreateParkingLot(){
         //logger.setLevel(Level.SEVERE);
     }
+
+    public static CreateParkingLot getInstance(){
+        return createParkingLot;
+    }
+
 
     /**
      * Execute command method
@@ -36,10 +42,14 @@ public class CreateParkingLot implements ProcessFactory {
 
         int count = 0;
 
-        while(count++ < parkingLotSize.intValue()){
-            parkingSlotList.add(new ParkingSlot(0L, 0L));
+        while(++count <= parkingLotSize.intValue()){
+            parkingSlotList.add(new ParkingSlot(0L, 0L, count));
         }
+
+        //SYS OUT
+        System.out.println("Created a parking lot with " + parkingLotSize.intValue() + " slots");
     }
+
 
     /**
      * Get Parking Slots
@@ -47,5 +57,15 @@ public class CreateParkingLot implements ProcessFactory {
      */
     public List<ParkingSlot> getParkingSlotList() {
         return parkingSlotList;
+    }
+
+
+    /**
+     * Get parking lot size
+     * @return
+     */
+
+    public Integer getParkingLotSize() {
+        return parkingLotSize.intValue();
     }
 }

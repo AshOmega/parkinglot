@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 public class FileReaderUtil {
 
 
-    static FileReaderUtil fileReaderUtil = new FileReaderUtil();
+    private static FileReaderUtil fileReaderUtil = new FileReaderUtil();
     final static Logger logger = Logger.getLogger(ParkingLotConstants.APP_NAME);
     private FileReaderUtil(){
 

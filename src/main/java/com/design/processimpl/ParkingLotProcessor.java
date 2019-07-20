@@ -15,6 +15,7 @@ public class ParkingLotProcessor {
        // logger.setLevel(Level.SEVERE);
     }
 
+
     /**
      * Start command processing
      * @param command
@@ -32,7 +33,7 @@ public class ParkingLotProcessor {
 
         processFactory.executeCommand(command);
 
-        System.out.println(processFactory.getClass().getName());
+       // System.out.println(processFactory.getClass().getName());
 
     }
 }

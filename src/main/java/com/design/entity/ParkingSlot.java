@@ -2,13 +2,18 @@ package com.design.entity;
 
 public class ParkingSlot {
 
+    private Integer id;
     private Long entryTime;
     private Long exitTime;
+
+
     private Car car;
 
-    public ParkingSlot(Long entryTime, Long exitTime) {
+    public ParkingSlot(Long entryTime, Long exitTime, Integer id) {
         this.entryTime = entryTime;
         this.exitTime = exitTime;
+        this.id = id;
+        this.car = null;
     }
 
     public Long getEntryTime() {
@@ -31,4 +36,11 @@ public class ParkingSlot {
         return car;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
 }

@@ -18,11 +18,4 @@ public class Car {
         return color;
     }
 
-    public void setRegnNumber(String regnNumber) {
-        this.regnNumber = regnNumber;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
 }

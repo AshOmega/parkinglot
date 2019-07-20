@@ -5,7 +5,7 @@ import com.design.utilities.ParkingLotConstants;
 
 public class ProcessCommand {
 
-    public static ProcessCommand processCommand = new ProcessCommand();
+    private static ProcessCommand processCommand = new ProcessCommand();
 
     private ProcessCommand() {
 
@@ -32,7 +32,7 @@ public class ProcessCommand {
 
         switch (processName) {
             case ParkingLotConstants.CREATE_PARKING_LOT:
-                processFactory = new CreateParkingLot();
+                processFactory = CreateParkingLot.getInstance();
                 break;
             case ParkingLotConstants.PARK:
                 processFactory = new Park();
