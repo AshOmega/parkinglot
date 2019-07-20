@@ -13,17 +13,15 @@ public class CreateParkingLot implements ProcessFactory {
 
     private static CreateParkingLot createParkingLot = new CreateParkingLot();
     final static Logger logger = Logger.getLogger(ParkingLotConstants.APP_NAME);
-
-
     private AtomicInteger parkingLotSize = new AtomicInteger();
-
     List<ParkingSlot> parkingSlotList = new ArrayList<>();
 
     private CreateParkingLot(){
-        //logger.setLevel(Level.SEVERE);
+       //
     }
 
     public static CreateParkingLot getInstance(){
+        logger.setLevel(Level.SEVERE);
         return createParkingLot;
     }
 

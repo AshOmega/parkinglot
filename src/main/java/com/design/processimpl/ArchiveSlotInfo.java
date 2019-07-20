@@ -42,5 +42,6 @@ public class ArchiveSlotInfo {
 
     public void addToParkingSlotArchivedList(ParkingSlot parkingSlot) {
         parkingSlotArchivedList.add(parkingSlot);
+        //parkingSlotArchivedList.stream().forEach(entry -> System.out.println(entry));
     }
 }

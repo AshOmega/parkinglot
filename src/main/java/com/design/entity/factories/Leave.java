@@ -35,7 +35,7 @@ public class Leave implements ProcessFactory {
 
 
     /**
-     *
+     * Initiate Leaving Task
      * @param slotNumber
      */
     private void initiateLeavingTask(Integer slotNumber) {
