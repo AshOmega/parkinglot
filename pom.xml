@@ -23,7 +23,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>application.ParkingLotApplication</mainClass>
+                            <mainClass>com.design.application.ParkingLotApplication</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

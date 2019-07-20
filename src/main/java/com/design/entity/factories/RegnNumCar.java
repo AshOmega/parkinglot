@@ -1,6 +1,6 @@
-package entity.factories;
+package com.design.entity.factories;
 
-public class SlotNumColor implements ProcessFactory {
+public class RegnNumCar implements ProcessFactory {
 
     /**
      *

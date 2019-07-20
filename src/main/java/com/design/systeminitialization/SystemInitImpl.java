@@ -1,7 +1,7 @@
-package systeminitialization;
+package com.design.systeminitialization;
 
-import processimpl.ParkingLotProcessor;
-import utilities.FileReaderUtil;
+import com.design.processimpl.ParkingLotProcessor;
+import com.design.utilities.FileReaderUtil;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package entity;
+package com.design.entity;
 
 public class ParkingLot {
 

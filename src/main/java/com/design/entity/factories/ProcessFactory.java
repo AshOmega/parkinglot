@@ -1,4 +1,4 @@
-package entity.factories;
+package com.design.entity.factories;
 
 public interface ProcessFactory {
 

@@ -1,4 +1,4 @@
-package systeminitialization;
+package com.design.systeminitialization;
 
 public interface SystemInit {
 

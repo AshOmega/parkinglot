@@ -1,4 +1,4 @@
-package utilities;
+package com.design.utilities;
 
 import java.io.IOException;
 import java.nio.file.Files;

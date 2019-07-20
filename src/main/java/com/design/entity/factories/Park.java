@@ -1,6 +1,6 @@
-package entity.factories;
+package com.design.entity.factories;
 
-public class RegnNumCar implements ProcessFactory {
+public class Park implements ProcessFactory {
 
     /**
      *

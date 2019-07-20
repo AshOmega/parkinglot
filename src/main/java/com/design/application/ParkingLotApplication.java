@@ -1,7 +1,7 @@
-package application;
+package com.design.application;
 
-import systeminitialization.SystemInit;
-import systeminitialization.SystemInitImpl;
+import com.design.systeminitialization.SystemInit;
+import com.design.systeminitialization.SystemInitImpl;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
