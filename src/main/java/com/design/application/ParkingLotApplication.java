@@ -6,6 +6,8 @@ import com.design.systeminitialization.SystemInitImpl;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+//file_inputs.txt
+
 public class ParkingLotApplication {
     final static Logger logger = Logger.getLogger("ParkingLotApplication");
 
