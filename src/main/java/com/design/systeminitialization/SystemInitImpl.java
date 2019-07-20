@@ -2,10 +2,18 @@ package com.design.systeminitialization;
 
 import com.design.processimpl.ParkingLotProcessor;
 import com.design.utilities.FileReaderUtil;
+import com.design.utilities.ParkingLotConstants;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SystemInitImpl implements SystemInit{
+    final static Logger logger = Logger.getLogger(ParkingLotConstants.APP_NAME);
+
+    public SystemInitImpl(){
+        //logger.setLevel(Level.SEVERE);
+    }
 
     /**
      * Initialize for File processing
@@ -13,7 +21,7 @@ public class SystemInitImpl implements SystemInit{
      */
     @Override
     public void initializeSystem(String fileName) {
-
+        logger.log(Level.INFO, "Initializing System for File Processing");
         List<String> inputCommandsList = FileReaderUtil.getInstance().readFromFile(fileName);
         inputCommandsList.forEach(entry -> new ParkingLotProcessor().startProcessing(entry));
     }
@@ -23,6 +31,6 @@ public class SystemInitImpl implements SystemInit{
      */
     @Override
     public void initializeSystem() {
-
+        logger.log(Level.INFO, "Initializing System for Interactive mode");
     }
 }

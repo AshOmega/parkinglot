@@ -9,5 +9,6 @@ public class ParkingLotConstants {
     public static final String REGN_NO_CAR_WITH_COLOR = "registration_numbers_for_cars_with_colour";
     public static final String SLOT_NO_CAR_WITH_COLOR = "slot_numbers_for_cars_with_colour";
     public static final String SLOT_NO_FOR_REGN = "slot_number_for_registration_number";
+    public static final String APP_NAME = "ParkingLotApplication";
 
 }
