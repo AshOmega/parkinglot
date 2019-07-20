@@ -14,16 +14,8 @@ public class ParkingSlot {
         this.car = null;
     }
 
-    public Long getEntryTime() {
-        return entryTime;
-    }
-
     public void setEntryTime(Long entryTime) {
         this.entryTime = entryTime;
-    }
-
-    public Long getExitTime() {
-        return exitTime;
     }
 
     public void setExitTime(Long exitTime) {

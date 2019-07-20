@@ -6,6 +6,7 @@ import com.design.utilities.ParkingLotConstants;
 import com.design.utilities.ScannerUtil;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,7 +28,12 @@ public class SystemInitImpl implements SystemInit {
     @Override
     public void initializeSystem(String fileName) {
         logger.log(Level.INFO, "Initializing System for File Processing");
-        List<String> inputCommandsList = FileReaderUtil.getInstance().readFromFile(fileName);
+        List<String> inputCommandsList = null;
+        try {
+            inputCommandsList = FileReaderUtil.getInstance().readFromFile(fileName);
+        } catch (UnsupportedEncodingException ex) {
+            logger.log(Level.SEVERE, "Caught exception : ", ex);
+        }
         inputCommandsList.forEach(entry -> new ParkingLotProcessor().startProcessing(entry));
     }
 

@@ -42,17 +42,22 @@ public class Leave implements ProcessFactory {
 
         logger.log(Level.INFO, "Entering initiateLeavingTask(Integer slotNumber)");
         List<ParkingSlot> parkingSlotList = CreateParkingLot.getInstance().getParkingSlotList();
-        ParkingSlot parkingSlot = parkingSlotList.get(slotNumber-1);
-        parkingSlot.setExitTime(LocalDateTime.now().toInstant(ZoneOffset.UTC).toEpochMilli());
+        if (parkingSlotList.size() >= slotNumber) {
+            ParkingSlot parkingSlot = parkingSlotList.get(slotNumber-1);
+            parkingSlot.setExitTime(LocalDateTime.now().toInstant(ZoneOffset.UTC).toEpochMilli());
 
-        //add to archive list for future reference for audits
-        ArchiveSlotInfo.getInstance().addToParkingSlotArchivedList(parkingSlot);
+            //add to archive list for future reference for audits
+            ArchiveSlotInfo.getInstance().addToParkingSlotArchivedList(parkingSlot);
 
-        clearSlot(parkingSlotList, parkingSlot, slotNumber);
+            clearSlot(parkingSlotList, parkingSlot, slotNumber);
 
-        //SYS OUT
-        System.out.println("Slot number 4 is free");
-        logger.log(Level.INFO, "Exiting initiateLeavingTask(Integer slotNumber)");
+            //SYS OUT
+            System.out.println("Slot number 4 is free");
+            logger.log(Level.INFO, "Exiting initiateLeavingTask(Integer slotNumber)");
+        } else {
+            logger.log(Level.SEVERE,"Error : Cannot leave as there are no slots assigned");
+            System.out.println("Error : Cannot leave as there are no slots assigned");
+        }
     }
 
 
