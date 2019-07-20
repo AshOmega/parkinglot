@@ -52,6 +52,8 @@ public class ProcessCommand {
             case ParkingLotConstants.SLOT_NO_FOR_REGN:
                 processFactory = new SlotNumRegn();
                 break;
+            default:
+                processFactory = null;
         }
 
         return processFactory;

@@ -31,7 +31,8 @@ public class ParkingLotProcessor {
         //get the relevant process factory instance
         ProcessFactory processFactory = ProcessCommand.getInstance().getProcessFactory(processName);
 
-        processFactory.executeCommand(command);
+        if(processFactory != null)
+            processFactory.executeCommand(command);
 
        // System.out.println(processFactory.getClass().getName());
 
