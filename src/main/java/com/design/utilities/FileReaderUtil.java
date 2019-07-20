@@ -1,6 +1,10 @@
 package com.design.utilities;
 
+import com.design.application.ParkingLotApplication;
+
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.LinkedList;
@@ -35,15 +39,20 @@ public class FileReaderUtil {
      *
      */
 
-    public List<String> readFromFile(String fileName){
+    public List<String> readFromFile(String fileName) throws UnsupportedEncodingException {
 
+        String path = ParkingLotApplication.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+        String decodedPath = URLDecoder.decode(path, "UTF-8");
+        decodedPath = decodedPath.substring(0, decodedPath.lastIndexOf('/'));
+        fileName = decodedPath + "/" + fileName;
+        System.out.println(fileName);
         List<String> fileContentAsList = new LinkedList<>();
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
 
             stream.forEach(fileContentAsList::add);
 
         } catch (IOException e) {
-            logger.log(Level.SEVERE, "Exception triggered", e);
+            logger.log(Level.SEVERE, "Exception triggered while reading input file", e);
         }
 
         return fileContentAsList;
