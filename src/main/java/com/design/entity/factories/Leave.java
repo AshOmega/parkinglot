@@ -42,7 +42,7 @@ public class Leave implements ProcessFactory {
 
         logger.log(Level.INFO, "Entering initiateLeavingTask(Integer slotNumber)");
         List<ParkingSlot> parkingSlotList = CreateParkingLot.getInstance().getParkingSlotList();
-        ParkingSlot parkingSlot = parkingSlotList.get(slotNumber);
+        ParkingSlot parkingSlot = parkingSlotList.get(slotNumber-1);
         parkingSlot.setExitTime(LocalDateTime.now().toInstant(ZoneOffset.UTC).toEpochMilli());
 
         //add to archive list for future reference for audits
