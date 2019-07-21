@@ -62,6 +62,7 @@ public class Park implements ProcessFactory {
     /**
      * Compute And Allocate Free Slot For Car
      * @param car
+     * @return Integer, slotnumber if allocated, -1 if no slot is available
      */
 
     private Integer computeAndAllocateFreeSlotForCar(Car car) {

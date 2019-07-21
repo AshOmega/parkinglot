@@ -30,6 +30,7 @@ public class SystemInitImpl implements SystemInit {
         logger.log(Level.INFO, "Initializing System for File Processing");
         List<String> inputCommandsList = null;
         try {
+            //read from file and perform actions
             inputCommandsList = FileReaderUtil.getInstance().readFromFile(fileName);
         } catch (UnsupportedEncodingException ex) {
             logger.log(Level.SEVERE, "Caught exception : ", ex);
@@ -49,6 +50,8 @@ public class SystemInitImpl implements SystemInit {
         ParkingLotProcessor parkingLotProcessor = new ParkingLotProcessor();
 
         String inputString = null;
+
+        //read each line from user input and perform the action.
         do {
             try {
                 inputString = ScannerUtil.getInstance().readInput();

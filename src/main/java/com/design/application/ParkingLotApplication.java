@@ -18,6 +18,11 @@ public class ParkingLotApplication {
 
     }
 
+
+    /**
+     * Start application method
+     * @param args
+     */
     public void startApplication(String args[]) {
         SystemInit systemInit = new SystemInitImpl();
 

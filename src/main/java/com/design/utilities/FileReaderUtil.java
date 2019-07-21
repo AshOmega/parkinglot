@@ -41,10 +41,13 @@ public class FileReaderUtil {
 
     public List<String> readFromFile(String fileName) throws UnsupportedEncodingException {
 
+        //Extension to prepend the directory path to the file as the applcation is invoked with the relative path of file.
+        //Hence we need to fetch the absolute path for processing
         String path = ParkingLotApplication.class.getProtectionDomain().getCodeSource().getLocation().getPath();
         String decodedPath = URLDecoder.decode(path, "UTF-8");
         decodedPath = decodedPath.substring(0, decodedPath.lastIndexOf('/'));
         fileName = decodedPath + "/" + fileName;
+
         System.out.println(fileName);
         List<String> fileContentAsList = new LinkedList<>();
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {

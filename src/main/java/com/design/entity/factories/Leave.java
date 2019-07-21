@@ -46,6 +46,8 @@ public class Leave implements ProcessFactory {
 
         logger.log(Level.INFO, "Entering initiateLeavingTask(Integer slotNumber)");
         List<ParkingSlot> parkingSlotList = CreateParkingLot.getInstance().getParkingSlotList();
+
+        // Inititate Leave only if the slot if occupied. Boundary condition checks
         if (parkingSlotList.size() >= slotNumber) {
             ParkingSlot parkingSlot = parkingSlotList.get(slotNumber-1);
             parkingSlot.setExitTime(LocalDateTime.now().toInstant(ZoneOffset.UTC).toEpochMilli());
@@ -53,6 +55,7 @@ public class Leave implements ProcessFactory {
             //add to archive list for future reference for audits
             ArchiveSlotInfo.getInstance().addToParkingSlotArchivedList(parkingSlot);
 
+            //clear the parkins slot for other cars
             clearSlot(parkingSlotList, parkingSlot, slotNumber);
 
             //SYS OUT
@@ -66,7 +69,7 @@ public class Leave implements ProcessFactory {
 
 
     /**
-     *
+     * Clear Parking Slot
      * @param parkingSlotList
      * @param parkingSlot
      * @param slotNumber
