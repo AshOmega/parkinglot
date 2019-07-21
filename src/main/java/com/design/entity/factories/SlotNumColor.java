@@ -24,8 +24,13 @@ public class SlotNumColor implements ProcessFactory {
     @Override
     public void executeCommand(String command) {
         String commandsString[] = command.split(" ");
-        String color = commandsString[1];
-        findSlotNumberByColor(color);
+        if (commandsString.length == 2) {
+            String color = commandsString[1];
+            findSlotNumberByColor(color);
+        } else {
+            System.out.println("Error : Invalid command");
+            logger.log(Level.SEVERE, "Error : Invalid command");
+        }
     }
 
 

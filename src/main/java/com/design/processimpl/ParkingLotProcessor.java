@@ -33,8 +33,7 @@ public class ParkingLotProcessor {
 
         if(processFactory != null)
             processFactory.executeCommand(command);
-
-       // System.out.println(processFactory.getClass().getName());
-
+        else
+            System.out.println("Error : Invalid command. Use the commands that are allowed. Refer documentation for more info");
     }
 }

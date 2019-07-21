@@ -28,9 +28,13 @@ public class Leave implements ProcessFactory {
     public void executeCommand(String command) {
 
         String commandsString[] = command.split(" ");
-        String slotNumber = commandsString[1];
-
-        initiateLeavingTask(Integer.parseInt(slotNumber));
+        if (commandsString.length == 2) {
+            String slotNumber = commandsString[1];
+            initiateLeavingTask(Integer.parseInt(slotNumber));
+        } else {
+            System.out.println("Error : Invalid command");
+            logger.log(Level.SEVERE, "Error : Invalid command");
+        }
     }
 
 

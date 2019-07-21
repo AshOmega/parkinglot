@@ -25,8 +25,13 @@ public class SlotNumRegn implements ProcessFactory {
     public void executeCommand(String command) {
 
         String commandsString[] = command.split(" ");
-        String regn = commandsString[1];
-        findSlotNumberByRegn(regn);
+        if (commandsString.length == 2) {
+            String regn = commandsString[1];
+            findSlotNumberByRegn(regn);
+        } else {
+            System.out.println("Error : Invalid command");
+            logger.log(Level.SEVERE, "Error : Invalid command");
+        }
     }
 
 

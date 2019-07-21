@@ -35,17 +35,22 @@ public class CreateParkingLot implements ProcessFactory {
     public void executeCommand(String command) {
 
         String commandsString[] = command.split(" ");
-        parkingLotSize.set(Integer.parseInt(commandsString[1]));
-        logger.log(Level.INFO, "Initializing Parking lot size of ==> " + parkingLotSize.intValue());
+        if (commandsString.length == 2) {
+            parkingLotSize.set(Integer.parseInt(commandsString[1]));
+            logger.log(Level.INFO, "Initializing Parking lot size of ==> " + parkingLotSize.intValue());
 
-        int count = 0;
+            int count = 0;
 
-        while(++count <= parkingLotSize.intValue()){
-            parkingSlotList.add(new ParkingSlot(0L, 0L, count));
+            while(++count <= parkingLotSize.intValue()){
+                parkingSlotList.add(new ParkingSlot(0L, 0L, count));
+            }
+
+            //SYS OUT
+            System.out.println("Created a parking lot with " + parkingLotSize.intValue() + " slots");
+        } else {
+            System.out.println("Error : Invalid command");
+            logger.log(Level.SEVERE, "Error : Invalid command");
         }
-
-        //SYS OUT
-        System.out.println("Created a parking lot with " + parkingLotSize.intValue() + " slots");
     }
 
 

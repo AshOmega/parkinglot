@@ -27,10 +27,14 @@ public class Park implements ProcessFactory {
     public void executeCommand(String command) {
 
         String commandsString[] = command.split(" ");
-        String regnNum = commandsString[1];
-        String color = commandsString[2];
-
-        initiateParkingTask(regnNum, color);
+        if (commandsString.length == 3) {
+            String regnNum = commandsString[1];
+            String color = commandsString[2];
+            initiateParkingTask(regnNum, color);
+        } else {
+            System.out.println("Error : Invalid command");
+            logger.log(Level.SEVERE, "Error : Invalid command");
+        }
     }
 
 
