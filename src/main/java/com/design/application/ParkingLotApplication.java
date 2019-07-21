@@ -12,7 +12,7 @@ public class ParkingLotApplication {
     final static Logger logger = Logger.getLogger("ParkingLotApplication");
 
     public static void main(String args[]) {
-
+        logger.setLevel(Level.SEVERE);
         ParkingLotApplication parkingLotApplication = new ParkingLotApplication();
         parkingLotApplication.startApplication(args);
 

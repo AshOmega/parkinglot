@@ -48,7 +48,6 @@ public class FileReaderUtil {
         decodedPath = decodedPath.substring(0, decodedPath.lastIndexOf('/'));
         fileName = decodedPath + "/" + fileName;
 
-        System.out.println(fileName);
         List<String> fileContentAsList = new LinkedList<>();
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
 
